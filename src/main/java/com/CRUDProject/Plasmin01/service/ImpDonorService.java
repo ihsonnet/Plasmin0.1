@@ -1,5 +1,5 @@
 package com.CRUDProject.Plasmin01.service;
-import com.CRUDProject.Plasmin01.Model.Donor;
+import com.CRUDProject.Plasmin01.model.Donor;
 import com.CRUDProject.Plasmin01.repository.DonorRepository;
 import org.springframework.stereotype.Service;
 
@@ -26,7 +26,7 @@ public class ImpDonorService implements DonorService {
 
     @Override
     public void updateDonor(Donor donor) {
-
+    donorRepository.save(donor);
     }
 
     @Override

@@ -1,6 +1,6 @@
 package com.CRUDProject.Plasmin01.service;
 
-import com.CRUDProject.Plasmin01.Model.Donor;
+import com.CRUDProject.Plasmin01.model.Donor;
 
 import java.util.List;
 import java.util.Optional;

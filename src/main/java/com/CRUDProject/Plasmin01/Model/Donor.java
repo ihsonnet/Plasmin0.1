@@ -1,4 +1,4 @@
-package com.CRUDProject.Plasmin01.Model;
+package com.CRUDProject.Plasmin01.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

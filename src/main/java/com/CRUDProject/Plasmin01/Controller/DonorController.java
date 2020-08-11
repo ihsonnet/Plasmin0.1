@@ -1,6 +1,6 @@
-package com.CRUDProject.Plasmin01.Controller;
+package com.CRUDProject.Plasmin01.controller;
 
-import com.CRUDProject.Plasmin01.Model.Donor;
+import com.CRUDProject.Plasmin01.model.Donor;
 import com.CRUDProject.Plasmin01.service.DonorService;
 import org.springframework.web.bind.annotation.*;
 
@@ -31,5 +31,10 @@ public class DonorController {
     @GetMapping("/donor/find/{Id}")
     public Optional<Donor> getDonor(@PathVariable long Id){
         return donorService.getDonor(Id);
+    }
+
+    @PutMapping(value = "/donor/update")
+    public void updateDonor(@RequestBody Donor donor){
+        donorService.updateDonor(donor);
     }
 }

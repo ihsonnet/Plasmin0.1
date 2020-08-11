@@ -1,4 +1,4 @@
-package com.CRUDProject.Plasmin01.dto.Request;
+package com.CRUDProject.Plasmin01.dto.request;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
