@@ -1,11 +1,46 @@
-package com.CRUDProject.Plasmin01.Controller;
+package com.CRUDProject.Plasmin01.controller;
 
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RestController;
+import com.CRUDProject.Plasmin01.model.Donor;
+import com.CRUDProject.Plasmin01.service.DonorService;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
+import java.util.Optional;
+
 @RestController
 public class DonorController {
-    @GetMapping(value = "/")
-    public String test(){
-        return "Hello Spring Boot";
+
+    final
+    DonorService donorService;
+
+    public DonorController(DonorService donorService) {
+        this.donorService = donorService;
+    }
+
+    @PostMapping(value = "/donor/add")
+    public void addDonor(@RequestBody Donor donor) {
+
+        donorService.addDonor(donor);
+    }
+
+    @GetMapping(value = "/donor/find/all")
+    public List<Donor> getAllDonor(){
+        return donorService.getAllDonor();
+    }
+
+    @GetMapping(value = "/donor/find/{Id}")
+    public Optional<Donor> getDonor(@PathVariable long Id){
+        return donorService.getDonor(Id);
+    }
+
+    @PutMapping(value = "/donor/update")
+    public void updateDonor(@RequestBody Donor donor){
+        donorService.updateDonor(donor);
+    }
+
+    @DeleteMapping(value = "/donor/delete/{Id}")
+    public String deleteDonor(@PathVariable long Id){
+        donorService.deleteDonor(Id);
+        return "Delete Successfully!";
     }
 }
