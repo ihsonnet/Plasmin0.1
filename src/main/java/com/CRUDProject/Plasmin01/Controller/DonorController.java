@@ -3,6 +3,7 @@ package com.CRUDProject.Plasmin01.Controller;
 import com.CRUDProject.Plasmin01.Model.Donor;
 import com.CRUDProject.Plasmin01.service.DonorService;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class DonorController {
@@ -15,7 +16,7 @@ public class DonorController {
     }
 
     @PostMapping(value = "/donor/add")
-    public void addDonor(Donor donor) {
+    public void addDonor(@RequestBody Donor donor) {
 
         donorService.addDonor(donor);
     }
