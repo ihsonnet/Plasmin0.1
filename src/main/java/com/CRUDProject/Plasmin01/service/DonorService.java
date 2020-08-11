@@ -10,5 +10,5 @@ public interface DonorService {
     void updateDonor(Donor donor);
     Optional<Donor> getDonor(long Id);
     List<Donor> getAllDonor();
-    Donor deleteDonor(long Id);
+    void deleteDonor(long Id);
 }

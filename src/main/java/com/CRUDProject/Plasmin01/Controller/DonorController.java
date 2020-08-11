@@ -28,7 +28,7 @@ public class DonorController {
         return donorService.getAllDonor();
     }
 
-    @GetMapping("/donor/find/{Id}")
+    @GetMapping(value = "/donor/find/{Id}")
     public Optional<Donor> getDonor(@PathVariable long Id){
         return donorService.getDonor(Id);
     }
@@ -36,5 +36,11 @@ public class DonorController {
     @PutMapping(value = "/donor/update")
     public void updateDonor(@RequestBody Donor donor){
         donorService.updateDonor(donor);
+    }
+
+    @DeleteMapping(value = "/donor/delete/{Id}")
+    public String deleteDonor(@PathVariable long Id){
+        donorService.deleteDonor(Id);
+        return "Delete Successfully!";
     }
 }

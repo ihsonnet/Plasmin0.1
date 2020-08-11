@@ -44,7 +44,7 @@ public class ImpDonorService implements DonorService {
     }
 
     @Override
-    public Donor deleteDonor(long Id) {
-        return null;
+    public void deleteDonor(long Id) {
+        donorRepository.deleteById(Id);
     }
 }
