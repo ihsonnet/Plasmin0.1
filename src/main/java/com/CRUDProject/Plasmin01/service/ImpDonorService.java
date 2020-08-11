@@ -1,18 +1,20 @@
 package com.CRUDProject.Plasmin01.service;
-
 import com.CRUDProject.Plasmin01.Model.Donor;
 import com.CRUDProject.Plasmin01.repository.DonorRepository;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
+
 @Service
 
-public class InpDonorService implements DonorService {
+public class ImpDonorService implements DonorService {
 
     final
     DonorRepository donorRepository;
 
-    public InpDonorService(DonorRepository donorRepository) {
+    public ImpDonorService(DonorRepository donorRepository) {
         this.donorRepository = donorRepository;
     }
 
@@ -28,13 +30,17 @@ public class InpDonorService implements DonorService {
     }
 
     @Override
-    public Donor getDonor(long Id) {
-        return null;
+    public Optional<Donor> getDonor(long Id) {
+        return donorRepository.findById(Id);
     }
 
     @Override
     public List<Donor> getAllDonor() {
-        return null;
+
+        List<Donor> donors = new ArrayList<>();
+        donorRepository.findAll().forEach(donors::add);
+        return donors;
+
     }
 
     @Override
